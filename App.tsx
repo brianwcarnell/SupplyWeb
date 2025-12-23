@@ -1,22 +1,21 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { LogisticsStatus, MapNode, AppPage } from './types';
-import Header from './components/Header';
-import MapModule from './components/MapModule';
-import LogisticsModule from './components/LogisticsModule';
-import NodeInspect from './components/NodeInspect';
-import Ticker from './components/Ticker';
-import TacticalAI from './components/TacticalAI';
-import NavigationMenu from './components/NavigationMenu';
-import FleetView from './components/FleetView';
-import PersonnelView from './components/PersonnelView';
-import HealthView from './components/HealthView';
-import SupplyRiskView from './components/SupplyRiskView';
-import TransactionsView from './components/TransactionsView';
-import MissionPlanningView from './components/MissionPlanningView';
-import MessagingView from './components/MessagingView';
-import IntelView from './components/IntelView';
-import { getPredictiveAnalysis } from './services/geminiService';
+import { LogisticsStatus, MapNode, AppPage } from './types.ts';
+import Header from './components/Header.tsx';
+import MapModule from './components/MapModule.tsx';
+import LogisticsModule from './components/LogisticsModule.tsx';
+import NodeInspect from './components/NodeInspect.tsx';
+import Ticker from './components/Ticker.tsx';
+import TacticalAI from './components/TacticalAI.tsx';
+import NavigationMenu from './components/NavigationMenu.tsx';
+import FleetView from './components/FleetView.tsx';
+import PersonnelView from './components/PersonnelView.tsx';
+import HealthView from './components/HealthView.tsx';
+import SupplyRiskView from './components/SupplyRiskView.tsx';
+import TransactionsView from './components/TransactionsView.tsx';
+import MissionPlanningView from './components/MissionPlanningView.tsx';
+import MessagingView from './components/MessagingView.tsx';
+import IntelView from './components/IntelView.tsx';
+import { getPredictiveAnalysis } from './services/geminiService.ts';
 
 const INITIAL_NODES: MapNode[] = [
   {

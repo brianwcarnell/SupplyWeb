@@ -1,14 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <script>
-    /**
-     * EMERGENCY ENV POLYFILL
-     * Must be defined before ANY other scripts load.
-     * Static hosts like GitHub Pages do not provide a 'process' object,
-     * which causes React/Gemini modules to crash if not defined.
-     */
+    // Must be the first thing to run to prevent ReferenceErrors in modules
     window.process = { env: { API_KEY: "" } };
   </script>
   <meta charset="UTF-8">
@@ -62,14 +56,14 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100px;
       background: linear-gradient(to bottom, transparent, rgba(19, 91, 236, 0.05), transparent);
-      z-index: 50; pointer-events: none;
+      z-index: 100; pointer-events: none;
     }
 
     .crt-effect::after {
       content: " "; display: block; position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
       background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-      z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none;
+      z-index: 99; background-size: 100% 2px, 3px 100%; pointer-events: none;
     }
 
     input[type=range] { -webkit-appearance: none; background: transparent; }
@@ -101,9 +95,12 @@
 </head>
 <body class="bg-background-dark text-white font-display overflow-x-hidden selection:bg-primary selection:text-white crt-effect">
   <div class="scanline animate-scanline"></div>
-  <div id="root"></div>
+  <div id="root">
+    <div class="flex h-screen items-center justify-center font-mono text-[10px] text-primary animate-pulse">
+      INITIALIZING SECURE UPLINK...
+    </div>
+  </div>
   
-  <!-- Entry point for the React application -->
   <script type="module" src="./index.tsx"></script>
 </body>
 </html>

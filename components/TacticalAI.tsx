@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { ChatMessage } from '../types';
-import { startTacticalAdvisor } from '../services/geminiService';
+import { ChatMessage } from '../types.ts';
+import { startTacticalAdvisor } from '../services/geminiService.ts';
 
 interface TacticalAIProps {
   isOpen: boolean;

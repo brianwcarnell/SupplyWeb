@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { generateTickerAlerts } from '../services/geminiService';
+import { generateTickerAlerts } from '../services/geminiService.ts';
 
 const Ticker: React.FC = () => {
   const [alerts, setAlerts] = useState<string>('// CRITICAL LOW: CLASS V @ DARWIN NODE (40% STOCK) // INTERCEPT DETECTED SECTOR 7 // ALT ROUTE BRAVO-2 ACTIVATED // T+4HRS DELAY //');

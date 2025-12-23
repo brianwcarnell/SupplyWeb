@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { getIntelligenceBriefing } from '../services/geminiService';
+import { getIntelligenceBriefing } from '../services/geminiService.ts';
 
 const IntelView: React.FC = () => {
   const [briefing, setBriefing] = useState<string>('');
