@@ -1,0 +1,8 @@
+{
+  "name": "INDOPACOM Theater COP",
+  "description": "A high-fidelity Theater Commander's Common Operational Picture (COP) with predictive logistics and real-time node monitoring.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
