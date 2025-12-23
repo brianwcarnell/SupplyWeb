@@ -1,10 +1,14 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+// Initialization helper to ensure we don't crash if process.env is slightly delayed
+const getAIClient = () => {
+  const apiKey = (window as any).process?.env?.API_KEY || "";
+  return new GoogleGenAI({ apiKey });
+};
 
 export const getPredictiveAnalysis = async (timeOffset: string) => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Perform a military theater logistics risk analysis for T+${timeOffset} hours in the INDOPACOM region. 
@@ -24,6 +28,7 @@ export const getPredictiveAnalysis = async (timeOffset: string) => {
 
 export const getHealthPrognosis = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Provide a 7-day predictive health prognosis for the INDOPACOM theater. 
@@ -41,6 +46,7 @@ export const getHealthPrognosis = async () => {
 
 export const getIntelligenceBriefing = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Generate a structured tactical intelligence briefing for the INDOPACOM theater. 
@@ -61,6 +67,7 @@ export const getIntelligenceBriefing = async () => {
 
 export const getSupplyRiskAssessment = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Perform a tactical supply chain risk assessment for INDOPACOM. 
@@ -79,6 +86,7 @@ export const getSupplyRiskAssessment = async () => {
 
 export const getTransactionSummary = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Analyze INDOPACOM logistics flow and summarize the 3 most strategic supply movements currently in progress. 
@@ -96,6 +104,7 @@ export const getTransactionSummary = async () => {
 
 export const getMissionStrategyAnalysis = async (missionName: string, objectives: string[]) => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Review the proposed mission: "${missionName}". 
@@ -115,6 +124,7 @@ export const getMissionStrategyAnalysis = async (missionName: string, objectives
 
 export const analyzeCommTraffic = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Analyze theater communication patterns. 
@@ -133,6 +143,7 @@ export const analyzeCommTraffic = async () => {
 
 export const generateTickerAlerts = async () => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: "Generate 5 critical military flash alerts for a simulated INDOPACOM COP. Format as single line strings separated by //.",
@@ -147,6 +158,7 @@ export const generateTickerAlerts = async () => {
 };
 
 export const startTacticalAdvisor = async (history: any[]) => {
+  const ai = getAIClient();
   const chat = ai.chats.create({
     model: 'gemini-3-flash-preview',
     config: {
