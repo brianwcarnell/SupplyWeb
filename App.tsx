@@ -92,22 +92,14 @@ const App: React.FC = () => {
 
   const renderContent = () => {
     switch (currentPage) {
-      case 'Fleet':
-        return <FleetView />;
-      case 'Personnel':
-        return <PersonnelView />;
-      case 'Health':
-        return <HealthView />;
-      case 'SupplyRisk':
-        return <SupplyRiskView />;
-      case 'Transactions':
-        return <TransactionsView />;
-      case 'MissionPlanning':
-        return <MissionPlanningView />;
-      case 'Messaging':
-        return <MessagingView />;
-      case 'Intel':
-        return <IntelView />;
+      case 'Fleet': return <FleetView />;
+      case 'Personnel': return <PersonnelView />;
+      case 'Health': return <HealthView />;
+      case 'SupplyRisk': return <SupplyRiskView />;
+      case 'Transactions': return <TransactionsView />;
+      case 'MissionPlanning': return <MissionPlanningView />;
+      case 'Messaging': return <MessagingView />;
+      case 'Intel': return <IntelView />;
       case 'COP':
       default:
         return (

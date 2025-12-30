@@ -5,14 +5,14 @@
     // Critical: Polyfill process immediately before any module loading
     window.process = { env: { API_KEY: "" } };
 
-    // Advanced Diagnostic Tool: Catch Module/Script Failures
+    // Catch Module/Script Failures and show a diagnostic screen
     window.addEventListener('error', function(event) {
       const root = document.getElementById('root');
-      if (root) {
+      if (root && !window.appLoaded) {
         root.innerHTML = `
-          <div style="background: #0b111a; border: 1px solid #ef4444; color: #ef4444; padding: 30px; margin: 20px; border-radius: 4px; font-family: 'Space Grotesk', monospace; font-size: 12px; line-height: 1.6; box-shadow: 0 0 50px rgba(239, 68, 68, 0.1); max-width: 500px; margin: 40px auto; border-left: 4px solid #ef4444;">
+          <div style="background: #0b111a; border: 1px solid #ef4444; color: #ef4444; padding: 30px; margin: 40px auto; border-radius: 4px; font-family: 'Space Grotesk', monospace; font-size: 12px; line-height: 1.6; box-shadow: 0 0 50px rgba(239, 68, 68, 0.1); max-width: 500px; border-left: 4px solid #ef4444;">
             <div style="font-weight: 800; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; font-size: 14px;">[CRITICAL_HALT] Secure Link Severed</div>
-            <div style="color: #94a3b8; margin-bottom: 20px; font-family: sans-serif;">The application module failed to initialize. Check console for details.</div>
+            <div style="color: #94a3b8; margin-bottom: 20px;">The application module failed to initialize. This usually occurs when the server doesn't support .tsx MIME types directly.</div>
             <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 2px; overflow-x: auto; border: 1px solid rgba(239,68,68,0.2); color: #f87171;">
               <strong>ERROR:</strong> ${event.message || 'Module Resolution Failure'}<br/>
               <span style="color: #64748b; font-size: 10px;">@ ${event.filename || 'unknown'}:${event.lineno || '0'}</span>
@@ -96,17 +96,17 @@
   </style>
 
   <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@19.0.0",
-      "react-dom": "https://esm.sh/react-dom@19.0.0",
-      "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-      "@google/genai": "https://esm.sh/@google/genai@1.3.0",
-      "react/": "https://esm.sh/react@19.0.0/",
-      "react-dom/": "https://esm.sh/react-dom@19.0.0/"
-    }
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
-  </script>
+}
+</script>
 </head>
 <body class="bg-background-dark text-white font-display overflow-x-hidden selection:bg-primary selection:text-white crt-effect">
   <div class="scanline animate-scanline"></div>
