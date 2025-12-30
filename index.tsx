@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 
-// Flag to tell the HTML error handler that React has started loading
+// Set flag so HTML error handler knows we've initialized
 (window as any).appLoaded = true;
 
 const rootElement = document.getElementById('root');
@@ -17,7 +17,6 @@ if (!rootElement) {
       </React.StrictMode>
     );
   } catch (error) {
-    console.error("[FATAL] React Render Failed:", error);
-    throw error;
+    console.error("[FATAL] React mount failed:", error);
   }
 }
