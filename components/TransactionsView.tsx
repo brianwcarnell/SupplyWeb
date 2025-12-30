@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { LogisticsTransaction } from '../types';
-import { getTransactionSummary } from '../services/geminiService';
+import { LogisticsTransaction } from '../types.ts';
+import { getTransactionSummary } from '../services/geminiService.ts';
 
 const MOCK_TRANSACTIONS: LogisticsTransaction[] = [
   { id: 'REQ-8821', timestamp: '1402Z', item: 'F-35 Engine Components', quantity: '4 Units', origin: 'Atsugi', destination: 'Okinawa', status: 'In-Transit', mode: 'Air' },

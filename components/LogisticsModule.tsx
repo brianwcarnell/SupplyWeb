@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { LogisticsStatus } from '../types';
+import { LogisticsStatus } from '../types.ts';
 
 interface LogisticsModuleProps {
   data: LogisticsStatus[];

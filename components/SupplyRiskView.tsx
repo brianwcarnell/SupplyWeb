@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { SupplyRoute } from '../types';
-import { getSupplyRiskAssessment } from '../services/geminiService';
+import { SupplyRoute } from '../types.ts';
+import { getSupplyRiskAssessment } from '../services/geminiService.ts';
 
 const ROUTES: SupplyRoute[] = [
   { id: 'SR-01', origin: 'Dar es Salaam', destination: 'Darwin', integrity: 94, status: 'Clear', cargo: 'Fuel/Bulk' },

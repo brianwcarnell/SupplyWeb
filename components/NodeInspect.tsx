@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { MapNode } from '../types';
+import { MapNode } from '../types.ts';
 
 interface NodeInspectProps {
   node: MapNode;

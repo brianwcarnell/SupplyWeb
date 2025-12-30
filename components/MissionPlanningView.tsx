@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
-import { MissionPhase } from '../types';
-import { getMissionStrategyAnalysis } from '../services/geminiService';
+import { MissionPhase } from '../types.ts';
+import { getMissionStrategyAnalysis } from '../services/geminiService.ts';
 
 const INITIAL_PHASES: MissionPhase[] = [
   { id: 'P1', label: 'Deployment & Staging', duration: 'T+48H', status: 'Active' },

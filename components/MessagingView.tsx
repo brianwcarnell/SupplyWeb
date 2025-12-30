@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { SecureMessage, Contact } from '../types';
-import { analyzeCommTraffic } from '../services/geminiService';
+import { SecureMessage, Contact } from '../types.ts';
+import { analyzeCommTraffic } from '../services/geminiService.ts';
 
 const CONTACTS: Contact[] = [
   { id: 'ADM-S', name: 'ADM. SAMUELS', role: '7th Fleet Cmd', status: 'online', lastSeen: 'NOW' },

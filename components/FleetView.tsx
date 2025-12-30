@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Asset } from '../types';
+import { Asset } from '../types.ts';
 
 const ASSETS: Asset[] = [
   { id: 'CVN-76', name: 'USS Ronald Reagan', type: 'Carrier', status: 'Operational', location: 'Philippine Sea' },

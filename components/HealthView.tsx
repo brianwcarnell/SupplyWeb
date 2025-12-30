@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { getHealthPrognosis } from '../services/geminiService';
+import { getHealthPrognosis } from '../services/geminiService.ts';
 
 const HealthView: React.FC = () => {
   const [prognosis, setPrognosis] = useState<string>('');

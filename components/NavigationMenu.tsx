@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { AppPage } from '../types';
+import { AppPage } from '../types.ts';
 
 interface NavigationMenuProps {
   isOpen: boolean;
